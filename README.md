@@ -6,9 +6,10 @@
 
 ## Project Goals
 
-- create an index displaying pokemon 'cards'
+<!-- - create an index displaying pokemon 'cards'
   - render each pokemon name, picture, and hp in a card
-  - when clicked, the card should toggle between displaying the front and back pictures
+  - when clicked, the card should toggle between displaying the front and back pictures -->
+
 - allow users to search in order to narrow down the cards shown on the page
 - wire up the form to add a missing pokemon (bulbasaur is missing, and you can probably intuit the image links to use based on the data you have). Since there aren't any validations, you may have to manually remove additions from the db.json file if you make a mistake on a post request, etc. When a new pokemon is added, it should show on the page without having to refresh.
 - BONUS: implement some way to sort or filter pokemon in addition to the name search
@@ -58,6 +59,6 @@ changes, and you can put it right into the debounce instead of the console log
 we placed there. Again - the Semantic UI docs are helpful for seeing a working
 example of that.
 
-[Semantic Docs]: https://react.semantic-ui.com
-[Search component]: https://react.semantic-ui.com/modules/search/
+[semantic docs]: https://react.semantic-ui.com
+[search component]: https://react.semantic-ui.com/modules/search/
 [debounce]: https://lodash.com/docs#debounce
