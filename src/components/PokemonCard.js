@@ -11,7 +11,7 @@ class PokemonCard extends React.Component {
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const hp = this.props.stats.find(stat => stat.name === "hp");
     const sprite = this.state.cardFlipped
       ? this.props.sprites.front

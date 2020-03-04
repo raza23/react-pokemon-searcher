@@ -23,6 +23,36 @@ class PokemonIndex extends React.Component {
       });
   }
 
+  handleCatch = newPokemon => {
+    const pokemon = {
+      name: newPokemon.name,
+
+      stats: [
+        {
+          value: newPokemon.hp,
+          name: "hp"
+        }
+      ],
+      sprites: {
+        front: newPokemon.frontUrl,
+        back: newPokemon.backUrl
+      }
+    };
+    // console.log(newPokemon)
+    fetch(pokemon_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(pokemon)
+    })
+      .then(res => res.json())
+      .then(newPokemon => {
+        this.setState({ pokemon: [...this.state.pokemon, newPokemon] });
+      });
+  };
+
   render() {
     // console.log(this.state.pokemon);
     const searchPokemon = this.state.pokemon.filter(poke =>
@@ -32,9 +62,9 @@ class PokemonIndex extends React.Component {
       <div>
         <h1>Pokemon Searcher</h1>
         <br />
-        <PokemonForm />
         <br></br>
         <input
+          placeholder="Search Your Pokemon"
           value={this.state.term}
           onChange={this.handleChange}
           type="search"
@@ -42,6 +72,8 @@ class PokemonIndex extends React.Component {
         <br />
         <br />
         <PokemonCollection pokemon={searchPokemon} />
+        <br></br>
+        <PokemonForm onNewCatch={this.handleCatch} />
       </div>
     );
   }
