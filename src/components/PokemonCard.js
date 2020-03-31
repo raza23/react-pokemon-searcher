@@ -11,11 +11,11 @@ class PokemonCard extends React.Component {
   };
 
   render() {
-    // console.log(this.props);
-    const hp = this.props.stats.find(stat => stat.name === "hp");
+    console.log(this.props);
+    // const hp = this.props.stats.find(stat => stat.name === "hp");
     const sprite = this.state.cardFlipped
-      ? this.props.sprites.front
-      : this.props.sprites.back;
+      ? this.props.fronturl
+      : this.props.backurl;
     return (
       <Card>
         <div onClick={this.handleClick}>
@@ -28,7 +28,7 @@ class PokemonCard extends React.Component {
           <div className="extra content">
             <span>
               <i className="icon heartbeat red" />
-              {hp.value} hp
+              {this.props.hp} hp
             </span>
           </div>
         </div>

@@ -7328,16 +7328,16 @@
       }
     },
     {
-      "name": "Lugia",
+      "name": "Bulbasaur",
       "stats": [
         {
-          "value": "100",
+          "value": "10",
           "name": "hp"
         }
       ],
       "sprites": {
-        "front": "https://img.pokemondb.net/sprites/diamond-pearl/normal/lugia.png",
-        "back": "https://img.pokemondb.net/sprites/black-white/back-normal/lugia.png"
+        "front": "https://img.pokemondb.net/sprites/black-white/normal/bulbasaur.png",
+        "back": "https://img.pokemondb.net/sprites/black-white/back-normal/bulbasaur.png"
       },
       "id": 207
     }

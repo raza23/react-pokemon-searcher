@@ -3,7 +3,8 @@ import PokemonCollection from "./PokemonCollection";
 import PokemonForm from "./PokemonForm";
 // import { Search } from "semantic-ui-react";
 // import _ from "lodash";
-const pokemon_url = "http://localhost:3000/pokemon";
+// const pokemon_url = "http://localhost:3000/pokemon";
+const pokemon_url = "http://localhost:8000/pokemon/";
 
 class PokemonIndex extends React.Component {
   state = {
@@ -54,10 +55,10 @@ class PokemonIndex extends React.Component {
   };
 
   render() {
-    // console.log(this.state.pokemon);
-    const searchPokemon = this.state.pokemon.filter(poke =>
-      poke.name.includes(this.state.term)
-    );
+    console.log(this.state);
+    // const searchPokemon = this.state.pokemon.filter(poke =>
+    //   poke.name.includes(this.state.term)
+    // );
     return (
       <div>
         <h1>Pokemon Searcher</h1>
@@ -71,7 +72,7 @@ class PokemonIndex extends React.Component {
         />
         <br />
         <br />
-        <PokemonCollection pokemon={searchPokemon} />
+        <PokemonCollection pokemon={this.state.pokemon} />
         <br></br>
         <PokemonForm onNewCatch={this.handleCatch} />
       </div>
